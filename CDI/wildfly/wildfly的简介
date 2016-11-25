@@ -1,0 +1,8 @@
+WildFly 曾用名：JBoss Application Server ,红帽公司宣布 JBoss AS 的继任者 WildFly，WildFly 将推动下一代应用服务器技术的发展，这个项目的名字是 JBoss.org 社区成员在 2012 年底投票产生。
+
+WildFly 将继续保留 JBoss 企业应用平台并定位一些关键的中间件技术，包括更灵活和更先进的应用开发，实现开放混合云和 Java EE 7.
+
+
+CDI中最令人兴奋的功能是允许每个人在Java EE平台中编写强大的扩展性功能,甚至于改变其核心本身。这些扩展性功能是可以完全移植到任何支持CDI的环境中。本文是对CDI提供的主要功能进行一个概述，并通过一个Web应用示例来介绍框架的运行机制。
+
+目前有三种实现CDI的方式: JBoss Weld(参考实现)、 Caucho CanDI和Apache OpenWebBeans。已经有几个框架提供了CDI的扩展性功能,如:Apache DeltaSpike、 JBoss Seam 3、和 Apache MyFaces CODI。
