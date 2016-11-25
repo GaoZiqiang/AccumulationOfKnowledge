@@ -1,0 +1,6 @@
+首先进入命令行如下:
+以root用户登录，命令：mysql -uroot -p 回车 输入密码；
+mysql>use mysql；
+mysql>UPDATE user SET password=PASSWORD('输入新密码') WHERE user='root';
+mysql>FLUSH PRIVILEGES;
+已经完成。
