@@ -1,0 +1,6 @@
+首先明确一点，不能将eclipse中已经存在的jar包复制粘切到该lib目录下.原因：eclipse中的各种资源库Library中jar包都是通过路径盗图到eclipse中的，实际上项目在运行时也是通过路径查找到需要的jar包的，总之一句话，各种资源库Library中的jar包都是虚拟存在的并不是真实存在的，它们不像自己编写的java、pom文件那样是真实存在的.
+那么将jar包导入到lib目录下就需要其他的方法了:
+将eclipse所指向的jar包导入到自己工程下的lib目录下方法如下：
+ 1）这里呢，一种方法是，直接用eclipse里自带的相关的项目jar包，右击项目“eclipse”菜单，选择对应的jar包就OK，例“Add Spring Capabilities”，并且可以设置Spring的一些配置信息，不错的可视化操作；
+ 2）添加外部的jar包到web项目的lib包下，右击项目“Properties”-->“Java Build Path”-->“Libraries”选项卡（当然了，此操作下，不仅仅这一种添加jar包的方式）；
+ 3）自己手动拷贝jar文件到项目的lib包下，具体操作只要把要添加的jar文件拷贝到eclipse中的workspace下的lib包里就好了；(该种方法经检测可用)
