@@ -1,0 +1,80 @@
+2.2 maven项目的目录结构win7
+
+C:\test\maven-hello-world>tree
+Folder PATH listing for volume 
+Volume serial number is 
+C:.
+├───src
+│   ├───maincnblogs
+│   │   └───java
+│   │       └───cnblogs
+│   └───test
+│       └───java
+│           └───
+└───targetAA2C-6E70
+    └───classes
+        └───cnblogs
+
+注意上面带红色的目录名，maven项目采用“约定优于配置”的原则，src/main/java约定用于存放源代码，src/main/test用于存放单元测试代码，src/target用于存放编译、打包后的输出文件。这是全世界maven项目的通用约定，。
+
+2.3 maven常用命令
+mvn archetype:create :创建maven项目请记住这些固定的目录结构
+mvn compile :编译源代码
+mvn test-comile :编译测试代码
+mvn test :运行应用程序中的单元测试
+mvn site :生成项目相关信息的网站
+mvn clean :清除目标目录中的生成结果
+mvn package :依据项目生成jar文件
+mvn install :在本地Repository中安装jar
+mvn eclipse:eclipse :生成eclipse项目文件
+2.4 maven插件的声明周期
+maven进行的工作:清理、编译、测试、打包、集成测试、验证、部署
+生命周期：
+clean、compile、test、package、install
+大的方面:clean、default（最核心）、site
+前面的阶段也会顺序执行
+2.5 pom.xml的解析
+常用元素
+
+<groupId></groupId>
+<artifactId></artifactId>
+<version>版本号</version>
+<packaging>打包的类型</packaging>
+<name>项目描述名</name>
+<url>项目地址</url>
+<developers>开发人员列表</developers>
+<organization>组织信息</organization>
+
+<dependencies>
+  <dependency>
+    <groupId></groupId>
+    <artifactId></artifactId>
+    <version>
+    <type>
+    <scope>test<scope>依赖范围
+    <optional>false/true<optional>设置依赖是否可选
+    <exclusions>排除依赖传递列表
+      <exclusion>
+      </excluson>
+    </exclusions>
+  </dependency>
+<dependencyManagement>依赖管理
+<dependencyManagement>
+<build>
+  <plugins>插件列表
+    <plusion>
+    </plusion>
+  </plugins>
+</build>
+<parent>
+</parent>
+<modules>
+  <module>
+  </module>
+<modules>
+
+2.6　依赖范围
+scope
+2.7　 依赖传递
+
+

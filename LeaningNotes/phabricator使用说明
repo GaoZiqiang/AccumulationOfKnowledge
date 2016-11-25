@@ -1,0 +1,32 @@
+作者：梁宇
+链接：https://www.zhihu.com/question/19977889/answer/17437670
+来源：知乎
+著作权归作者所有，转载请联系作者获得授权。
+
+Phabricator的代码评审工具是Differential，Arcanist只能说是Phabricator提交代码评审的工具，不使用Arcanist也能使用Differential进行代码评审，方法是在Differential界面点击右上角的“Create Diff”创建Diff和Revision。
+
+Arcanist在Unix下的大致使用方法如下：
+1、 arc设置
+设置编辑器: arc set-config editor "vi"
+设置默认Phabricator URI: arc set-config default http://your_phabricator_url/
+2、 配置.arcconfig
+在项目代码根目录创建.arcconfig文件，内容例如
+{
+"project_id" : "your_project_id",
+"conduit_uri" : "http://your_phabricator_url/"
+}
+此文件可提交到代码库上。
+3、 安装证书
+cd your_project_src_root
+arc install-certificate
+此命令需要输入token，浏览器打开http://your_phabricator_url/conduit/token/，复制内容粘贴即可，注意使用自己的用户登录
+4、 提交Differential（GBK）
+默认：arc diff . --encoding GBK
+修改已存在的diff: arc diff . --update D1 --encoding GBK
+创建新的diff: arc diff . --create --encoding GBK
+从文件提取信息创建：arc diff . --encoding GBK --create --message-file ~/arcdiff.txt
+注：arc diff可支持一次创建多个目录的diff，如不指定目录则为整个库。
+
+Phabricator的数据库使用UTF8编码（参阅User_Guide_UTF-8_and_Character_Encoding.html），使用网页提交Diff和Revision以及进行代码评审时没有问题，Arcanist也支持其它编码的代码库，国内一般使用GBK字符集，提交arc diff时必须显式指定GBK字符集编码，否则如源代码存在非UTF-8编码字符则会被保存为二进制文件；
+提交diff时在命令行及编辑器中禁止输入非UTF-8编码字符，如果输入了GBK中文字符且保存信息后可能会导致Invalid UTF-8 string passed to phutil_utf8v错误，此时需要手工删除项目代码根目录下的.svn/arc/create-message文件方能继续执行；
+如需arc diff 支持输入GBK字符需要修改Arcanist的arcanist.php和ArcanistDiffWorkflow.php代码文件。 
