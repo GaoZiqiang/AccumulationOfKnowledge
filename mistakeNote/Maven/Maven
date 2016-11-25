@@ -1,0 +1,17 @@
+Maven使用过程中出现的错误
+
+错误１：
+Maven在打包构建时报错:No goals have been specified for this build.
+解决方法:
+pom.xml文件<build>标签后面加上<defaultGoal>compile</defaultGoal>即可  
+错误２：
+Maven在编译时报错:程序包redis.clients.***未发现.
+解决方法:
+pom.xml文件添加一个依赖 
+redis.clients/jedis/ Maven依赖写法
+<dependency>
+  <groupId>redis.clients</groupId>
+  <artifactId>jedis</artifactId>
+  <version>2.4.2</version>
+</dependency>
+

@@ -1,0 +1,29 @@
+环境变量的配置方法有两种：
+示例如下：
+#set wildfly eviroment variables
+#环境变量的配置有两种方式
+#export PATH="$PATH:/home/gaoziqiang/dev/Technology/WildFly/wildfly/bin/"
+export JBOSS_PATH=$HOME/dev/Technology/WildFly/wildfly
+
+错误一:
+路径不正确：
+没有从/home/gaoziqiang
+export PATH="$PATH:【/home/gaoziqiang】/dev/Technology/WildFly/wildfly/bin/"配置成export PATH="$PATH:【】/dev/Technology/WildFly/wildfly/bin/"
+错误二:
+缺少根目录/
+export PATH="$PATH:【/】home/gaoziqiang/dev/Technology/WildFly/wildfly/bin/"配置成export PATH="$PATH:【】home/gaoziqiang/dev/Technology/WildFly/wildfly/bin/"
+【错误三：】
+导致出现一下严重的错误!
+【ls、vi等命令不能使用了，只能使用绝对路径来操作】
+命令 'vi' 可在 '/usr/bin/vi' 处找到 由于/usr/bin 不在PATH 环境变量中，故无法找到该命令。 vi：未找到命令
+解决方法:
+终极解决方法：
+到/etc/environment下修改
+【记住以下内容：
+gaoziqiang@gaoziqiang-Lenovo-G50-70:/etc$ cat environment 
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"】
+使用绝对路径来操作
+liyang@liyang:~$ /usr/bin/vi /etc/environment
+liyang@liyang:~$ /usr/bin/vi filename
+liyang@liyang:~$ /usr/bin/ls mulu
+
