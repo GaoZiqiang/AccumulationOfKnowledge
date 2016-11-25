@@ -1,0 +1,54 @@
+1、把oracle.zip文件解压到 /home/oracle/
+[root@localhost tools]#unzip -o -d /home/oracle oracle.zip
+#-o:不提示的情况下覆盖文件；
+#-d:-d /home/oracle 指明将文件解压缩到/home/oracle目录下；
+
+2、进入Oracle解压目录
+[root@localhost tools]#cd /home/oracle
+
+3、编译链接准备工作，指定安装目录
+[root@localhost tools]#./configure --prefix=/opt/Oracle
+
+4、调用合适的编译器编译当前源码
+[root@localhost tools]#make
+
+5、将可执行程序安装到正确的位置
+[root@localhost tools]#make install
+
+zip命令可以用来将文件压缩成为常用的zip格式。
+
+unzip命令则用来解压缩zip文件。
+
+1. 把一个文件text1.txt和一个目录example压缩成为document.zip：
+
+＃ zip -r document text1.txt example
+
+[-r ]递归处理，将指定目录下的所有文件和子目录一并处理。
+
+zip是个使用广泛的压缩程序，文件经它压缩后会另外产生具有 .zip 扩展名的压缩文件。
+
+2.解压缩document.zip：
+
+# unzip document.zip
+
+解压在当前目录
+
+可用 [-d <目录>]指定一个存放目录
+
+# unzip document.zip -d specifydir
+
+3.不想解压缩，只想看看它里面有什么：
+
+# unzip -v document.zip
+
+或者
+
+# unzip -l document.zip
+
+4.验证压缩文件是否正确
+
+# unzip -t document.zip
+
+5.不处理压缩文件中原有的目录路径：
+
+# unzip -j document.zip

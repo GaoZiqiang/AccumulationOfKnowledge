@@ -1,0 +1,59 @@
+命令步骤如下:
+tar -xzvf file.gz 解压缩
+./configure　配置
+make 编译
+make install　安装
+我们以apache_1_3_6_tar.gz为例讲解下吧
+
+①切换到root用户
+
+②解压数据包：
+
+终端下进入到你软件包的目录输入：tar -xzvf apache_1_3_6_tar.gz
+
+③编译安装软件：
+
+成功解压缩源代码文件后，终端下进入到解包的目录下：
+
+#cd apache_1.3.6
+
+#ls
+
+至此，编译完成，但是在安装前我们有必要阅读下Readme文件和Install文件。
+
+观察下该目录中包含的是：configure 、Makefile 还是Imake。
+
+①如果是configure 文件，接下来则执行：
+
+#./configure
+
+#make
+
+#make install
+
+②如果是Makefile 文件，则执行：
+
+#make
+
+#make install
+
+③如果是Imake文件，就执行：
+
+#xmkmf
+
+#make
+
+#makeinstall
+
+如果没有出现错误提示，则表明安装完成，软件安装的位置通常在安装时显示，否则只能查阅Readme文件
+5
+
+一般常见安装错误有：
+
+①没有安装c或c++编译器
+
+②没有安装make工具
+
+③没有安装autoconf工具
+
+④缺少某些链接库

@@ -1,0 +1,11 @@
+在家目录下的.bashrc文件下配置环境变量
+
+示例如下：
+配置wildfly的环境变量
+#set wildfly eviroment variables
+环境变量配置有两种
+#export PATH="$PATH:/home/gaoziqiang/dev/Technology/WildFly/wildfly/bin/"
+export JBOSS_PATH=$HOME/dev/Technology/WildFly/wildfly
+注意要点：
+１．路径名要正确；
+２．不同的软件的终止路径不同，可以截止到wildfly也可以截止到wildfly/bin.

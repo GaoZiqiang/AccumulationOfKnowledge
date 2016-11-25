@@ -1,0 +1,15 @@
+ubuntu SSH连接、远程上传下载文件
+1.安装SSH(Secure Shell) 服务以提供远程管理服务
+命令:sudo apt-get install ssh
+2.SSH 远程登入ubuntu机
+3.将文件从远程ubuntu机拷贝到本地主机
+命令:scp -r remoteUsername@192.168.1.105:/home/remoteUsername/remoteFile .(.表示本地家目录)
+注意:密码是远程主机的密码
+4.将文件从本地主机拷贝到远程主机
+命令:scp -r localFile remoteUsername@192.168.1.105:/home/remoteUsername/
+
+其他内容:
+将 文件/文件夹 从远程 Ubuntu 机拷至本地(rsync)
+rsync -v -u -a --delete --rsh=ssh --stats username@192.168.0.1:/home/username/remotefile.txt .
+将 文件/文件夹 从本地拷至远程 Ubuntu 机(rsync)
+rsync -v -u -a --delete --rsh=ssh --stats localfile.txt username@192.168.0.1:/home/username/
