@@ -1,0 +1,4 @@
+启动postgresql服务器
+service postgresql restart
+关闭服务器
+service postgresql stop
