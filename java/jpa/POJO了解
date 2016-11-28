@@ -1,0 +1,4 @@
+POJO全称Plain Ordinary Java Object，即普通Java对象.POJO不担当任何特殊的角色，有别于
+JavBean，不实现任何特殊的Java框架的接口.具有基本的getter和setter方法.
+
+
