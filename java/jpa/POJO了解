@@ -1,4 +1,14 @@
-POJO全称Plain Ordinary Java Object，即普通Java对象.POJO不担当任何特殊的角色，有别于
+POJO全称Plain Ordinary Java Object/Pure Old Java Object，中文释义普通Java类即普通Java对象.POJO不担当任何特殊的角色，有别于
 JavBean，不实现任何特殊的Java框架的接口.具有基本的getter和setter方法.
 
 
+接下来说说JavaBean
+JavaBean的本质：是由Java语言写成的、被容器（如Tomcat）所创建的、可重复使用的组件.
+JavcBean具有的特点:
+含有一个无参构造器（便于调用组件）
+实现Serializable接口
+类是具体的、公共的
+
+
+接下来再讲讲EJB
+EJB,Enterprise JavaBean,是J2EE的一部分
