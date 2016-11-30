@@ -1,0 +1,3 @@
+ln -s命令
+例如
+ln -s aaa.jar bbb.jar
