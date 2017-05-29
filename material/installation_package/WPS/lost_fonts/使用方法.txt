@@ -1,0 +1,6 @@
+整个wps_symbol_fonts目录拷贝到 /usr/share/fonts/  目录下
+
+
+或者！！！！
+直接安装啊。。。。
+
